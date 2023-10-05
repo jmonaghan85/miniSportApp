@@ -13,6 +13,8 @@
 		ED2CD7B52ACB13FE00186E85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2CD7B32ACB13FE00186E85 /* Main.storyboard */; };
 		ED2CD7B72ACB13FF00186E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2CD7B62ACB13FF00186E85 /* Assets.xcassets */; };
 		ED2CD7BA2ACB13FF00186E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2CD7B82ACB13FF00186E85 /* LaunchScreen.storyboard */; };
+		ED2CD7CA2ACD751E00186E85 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2CD7C92ACD751E00186E85 /* NewsData.swift */; };
+		ED2CD7CC2ACD7E7500186E85 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2CD7CB2ACD7E7500186E85 /* DataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		ED2CD7B62ACB13FF00186E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2CD7B92ACB13FF00186E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2CD7BB2ACB13FF00186E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED2CD7C92ACD751E00186E85 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
+		ED2CD7CB2ACD7E7500186E85 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +61,14 @@
 			isa = PBXGroup;
 			children = (
 				ED2CD7AD2ACB13FE00186E85 /* AppDelegate.swift */,
+				ED2CD7C92ACD751E00186E85 /* NewsData.swift */,
 				ED2CD7AF2ACB13FE00186E85 /* SceneDelegate.swift */,
 				ED2CD7B12ACB13FE00186E85 /* ViewController.swift */,
 				ED2CD7B32ACB13FE00186E85 /* Main.storyboard */,
 				ED2CD7B62ACB13FF00186E85 /* Assets.xcassets */,
 				ED2CD7B82ACB13FF00186E85 /* LaunchScreen.storyboard */,
 				ED2CD7BB2ACB13FF00186E85 /* Info.plist */,
+				ED2CD7CB2ACD7E7500186E85 /* DataLoader.swift */,
 			);
 			path = miniSportApp;
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2CD7CC2ACD7E7500186E85 /* DataLoader.swift in Sources */,
+				ED2CD7CA2ACD751E00186E85 /* NewsData.swift in Sources */,
 				ED2CD7B22ACB13FE00186E85 /* ViewController.swift in Sources */,
 				ED2CD7AE2ACB13FE00186E85 /* AppDelegate.swift in Sources */,
 				ED2CD7B02ACB13FE00186E85 /* SceneDelegate.swift in Sources */,
