@@ -13,7 +13,7 @@ struct Top: Codable {
 
 struct Data: Codable {
     var topic: Topic
-    var items: [Items]
+    var items: [Item]
 }
 
 struct Topic: Codable {
@@ -23,7 +23,7 @@ struct Topic: Codable {
 }
 
 
-struct Items: Codable {
+struct Item: Codable {
     var type: String
     var title: String
     var url: String
@@ -31,6 +31,7 @@ struct Items: Codable {
     var sectionUrl: String
     var isLive: Bool
     var lastUpdatedTimestamp: Int
+    var lastUpdatedText: String
     var image: Image
 }
 
