@@ -9,7 +9,9 @@ import WebKit
 class WebpageController: UIViewController, WKNavigationDelegate, NSSecureCoding {
     var webView: WKWebView!
     var url: URL
-
+    
+ 
+    
     init(url: URL) {
         self.url = url
         print("WebpageController: Initializing with UhjgjhgjhRL - \(url.absoluteString)")
@@ -33,13 +35,34 @@ class WebpageController: UIViewController, WKNavigationDelegate, NSSecureCoding 
         webView = WKWebView()
         webView.navigationDelegate = self
         view = webView
+
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
+        
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .done, target: self, action: nil)
+        // share button
+        let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareButtonTapped))
+        self.navigationItem.rightBarButtonItem = shareButton
     }
+    
+    // Function to handle the "square.and.arrow.up" button tap for sharing
+    @objc func shareButtonTapped() {
+        // Create a UIActivityViewController to share the URL
+        let shareURL = [url]
+        let activityViewController = UIActivityViewController(activityItems: shareURL, applicationActivities: nil)
+
+        if let popoverPresentationController = activityViewController.popoverPresentationController {
+            popoverPresentationController.barButtonItem = self.navigationItem.rightBarButtonItem
+        }
+
+        // Present the share sheet
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
     override func encode(with aCoder: NSCoder) {
         aCoder.encode(url.absoluteString, forKey: "url")
     }
