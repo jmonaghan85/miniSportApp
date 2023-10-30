@@ -6,30 +6,81 @@
 //
 
 import XCTest
+@testable import miniSportApp
 
 final class DataLoaderTest: XCTestCase {
+    func testCanParseData() throws {
+        //        ------use test file for json data:-----
+        guard let pathString = Bundle(for: type(of: self)).url(forResource: "News", withExtension: "json") else {
+                    fatalError("json not found")
+                }
+                print("\n\n\(pathString)\n\n")
+        
+                guard let json = try? Data(contentsOf: pathString) else {
+                    fatalError("Unable to convert json to String")
+                }
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let news = try? JSONDecoder().decode(Top.self, from: json)
+        //check if news is not nil
+        XCTAssertNotNil(news)
+        
+        // Access the item's title
+        if let item = news?.data.items.first {
+            XCTAssertEqual("Schumacher junior wins European F3 title with race to spare", item.title)
+            XCTAssertEqual("https://www.bbc.co.uk/sport/motorsport/45851176", item.url)
+            XCTAssertEqual("18h", item.lastUpdatedText)
+            XCTAssertEqual("Formula 1", item.sectionLabel)
+        } else {
+            XCTFail("Item not found")
         }
     }
+    
+    
+    func testCanParseWithEmptyString() throws{
+        let json = """
+            {
+            "data":{
+              "topic":{
+                 "title":"Formula 1",
+                 "url":"https://www.bbc.co.uk/sport/formula1"
+              },
+              "items":[
+                 {
+                    "type":"story",
+                    "title":"",
+                    "url":"https://www.bbc.co.uk/sport/motorsport/45851176",
+                    "sectionLabel":"Formula 1",
+                    "sectionUrl":"https://www.bbc.co.uk/sport/formula1",
+                    "isLive":false,
+                    "lastUpdatedText":"18h",
+                    "mediaType":null,
+                    "contentType":null,
+                    "lastUpdatedTimestamp":1539529691,
+                    "image":{
+                       "small":"https://ichef.bbci.co.uk/onesport/cps/320/cpsprodpb/16477/production/_103855219_schumacher.jpg",
+                       "medium":"https://ichef.bbci.co.uk/onesport/cps/512/cpsprodpb/16477/production/_103855219_schumacher.jpg",
+                       "large":"https://ichef.bbci.co.uk/onesport/cps/976/cpsprodpb/16477/production/_103855219_schumacher.jpg",
+                       "altText":"Mick Schumacher",
+                       "copyrightHolder":"Getty Images"
+                    }
+                 }
+            ]
+            }
+            }
+            """
 
+        let data = json.data(using: .utf8)!
+        let news = try? JSONDecoder().decode(Top.self, from: data)
+        
+        // Access the item's title
+        if let item = news?.data.items.first {
+            XCTAssertEqual("", item.title)
+        } else {
+            XCTFail("Item not found")
+        }
+    }
+    
 }
+
+
+

@@ -1,9 +1,4 @@
-//
-//  ViewController.swift
-//  miniSportApp
-//
-//  Created by Joanne Monaghan on 02/10/2023.
-//
+
 
 import UIKit
 
@@ -12,34 +7,39 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var data: Top?
+    var dm: DataManager = DataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         tableView.delegate = self
         tableView.dataSource = self
         
         
-        let url = URL(string: "https://bbc.github.io/sport-app-dev-tech-challenge/data.json")!
+        dm.loadData(url: "https://bbc.github.io/sport-app-dev-tech-challenge/data.json") { data in
+            self.data = data
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
-                print("Error fetching data: \(error.localizedDescription)")
-                return
-            }
-            
-            if let data = data {
-                do {
-                    self.data = try JSONDecoder().decode(Top.self, from: data)
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                } catch {
-                    print("Error decoding JSON: \(error.localizedDescription)")
-                }
-            }
-        }.resume()
+//
+//        URLSession.shared.dataTask(with: url) { data, _, error in
+//            if let error = error {
+//                print("Error fetching data: \(error.localizedDescription)")
+//                return
+//            }
+//            
+//            if let data = data {
+//                do {
+//                    self.data = try JSONDecoder().decode(Top.self, from: data)
+//                    DispatchQueue.main.async {
+//                        self.tableView.reloadData()
+//                    }
+//                } catch {
+//                    print("Error decoding JSON: \(error.localizedDescription)")
+//                }
+//            }
+//        }.resume()
         
         
         
@@ -70,8 +70,6 @@ class ViewController: UIViewController {
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
-
-
 
 //extension ViewController: UITableViewDelegate {
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

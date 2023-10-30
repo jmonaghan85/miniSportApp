@@ -1,35 +1,53 @@
-//
-//  DataManagerTests.swift
-//  miniSportAppTests
-//
-//  Created by Joanne Monaghan on 25/10/2023.
-//
 
 import XCTest
 
-final class DataManagerTests: XCTestCase {
+@testable import miniSportApp
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+class DataManagerTests: XCTestCase {
+    let mockJSONData = """
+{
+   "data":{
+      "topic":{
+         "title":"Formula 1",
+         "url":"https://www.bbc.co.uk/sport/formula1"
+      },
+      "items":[
+         {
+            "type":"story",
+            "title":"Schumacher junior wins European F3 title with race to spare",
+            "url":"https://www.bbc.co.uk/sport/motorsport/45851176",
+            "sectionLabel":"Formula 1",
+            "sectionUrl":"https://www.bbc.co.uk/sport/formula1",
+            "isLive":false,
+            "lastUpdatedText":"18h",
+            "mediaType":null,
+            "contentType":null,
+            "lastUpdatedTimestamp":1539529691,
+            "image":{
+               "small":"https://ichef.bbci.co.uk/onesport/cps/320/cpsprodpb/16477/production/_103855219_schumacher.jpg",
+               "medium":"https://ichef.bbci.co.uk/onesport/cps/512/cpsprodpb/16477/production/_103855219_schumacher.jpg",
+               "large":"https://ichef.bbci.co.uk/onesport/cps/976/cpsprodpb/16477/production/_103855219_schumacher.jpg",
+               "altText":"Mick Schumacher",
+               "copyrightHolder":"Getty Images"
+            }
+         }
+    ]
+}
+}
+""".data(using: .utf8)!
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    // Test loading data from a URL
+    func testLoadData() {
+        let dataManager = DataManager()// Create an instance of DataManager
+        let expectation = XCTestExpectation(description: "Data loaded successfully")// Create an expectation for the callback
+        let mockURL = "https://www.bbc.co.uk/sport/motorsport/45851176"// Replace the URL with a mock URL for testing
+        
+        // Call the loadData method
+        dataManager.loadData(url: mockURL) { (result: Top) in
+            XCTAssertNotNil(result)
+            // Add extra checks here if needed
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 5.0)// Wait for the expectation to be fulfilled or time out
     }
-
 }

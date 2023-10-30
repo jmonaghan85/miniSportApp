@@ -14,6 +14,14 @@
 		ED2CD7BA2ACB13FF00186E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2CD7B82ACB13FF00186E85 /* LaunchScreen.storyboard */; };
 		ED2CD7CA2ACD751E00186E85 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2CD7C92ACD751E00186E85 /* NewsData.swift */; };
 		ED2CD7CC2ACD7E7500186E85 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2CD7CB2ACD7E7500186E85 /* DataLoader.swift */; };
+		ED351AC32AE129860082D4D2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED351AC22AE129860082D4D2 /* DataManager.swift */; };
+		ED351AC52AE66E9E0082D4D2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED351AC42AE66E9E0082D4D2 /* Launch Screen.storyboard */; };
+		ED351AC72AE6B0590082D4D2 /* WebpageControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED351AC62AE6B0590082D4D2 /* WebpageControllerTests.swift */; };
+		ED351AC92AE6BB3C0082D4D2 /* DataLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED351AC82AE6BB3C0082D4D2 /* DataLoaderTest.swift */; };
+		ED351ACE2AE9665F0082D4D2 /* DataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED351ACD2AE9665F0082D4D2 /* DataManagerTests.swift */; };
+		ED351AD02AEA57C20082D4D2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED351ACF2AEA57C20082D4D2 /* SignInController.swift */; };
+		ED351AD22AEA5BD20082D4D2 /* TopicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED351AD12AEA5BD20082D4D2 /* TopicController.swift */; };
+		ED351AD92AEBF40D0082D4D2 /* News.json in Resources */ = {isa = PBXBuildFile; fileRef = ED351AD82AEBF40D0082D4D2 /* News.json */; };
 		ED69A0452AD42CC900EB1FB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69A0442AD42CC900EB1FB4 /* SceneDelegate.swift */; };
 		ED69A06E2AD7E40300EB1FB4 /* WebpageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69A06D2AD7E40300EB1FB4 /* WebpageController.swift */; };
 		EDB032352ADD53C5002BB52C /* miniSportAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB032342ADD53C5002BB52C /* miniSportAppTests.swift */; };
@@ -48,6 +56,14 @@
 		ED2CD7BB2ACB13FF00186E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED2CD7C92ACD751E00186E85 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		ED2CD7CB2ACD7E7500186E85 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		ED351AC22AE129860082D4D2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		ED351AC42AE66E9E0082D4D2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		ED351AC62AE6B0590082D4D2 /* WebpageControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebpageControllerTests.swift; sourceTree = "<group>"; };
+		ED351AC82AE6BB3C0082D4D2 /* DataLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderTest.swift; sourceTree = "<group>"; };
+		ED351ACD2AE9665F0082D4D2 /* DataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTests.swift; sourceTree = "<group>"; };
+		ED351ACF2AEA57C20082D4D2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		ED351AD12AEA5BD20082D4D2 /* TopicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicController.swift; sourceTree = "<group>"; };
+		ED351AD82AEBF40D0082D4D2 /* News.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = News.json; path = fixtures/News.json; sourceTree = "<group>"; };
 		ED69A0442AD42CC900EB1FB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ED69A06D2AD7E40300EB1FB4 /* WebpageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebpageController.swift; sourceTree = "<group>"; };
 		EDB032322ADD53C5002BB52C /* miniSportAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = miniSportAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,13 +121,17 @@
 		ED2CD7AC2ACB13FE00186E85 /* miniSportApp */ = {
 			isa = PBXGroup;
 			children = (
-				ED2CD7AD2ACB13FE00186E85 /* AppDelegate.swift */,
 				ED2CD7C92ACD751E00186E85 /* NewsData.swift */,
+				ED2CD7B12ACB13FE00186E85 /* ViewController.swift */,
+				ED351AC22AE129860082D4D2 /* DataManager.swift */,
 				ED2CD7CB2ACD7E7500186E85 /* DataLoader.swift */,
+				ED351ACF2AEA57C20082D4D2 /* SignInController.swift */,
+				ED351AD12AEA5BD20082D4D2 /* TopicController.swift */,
 				ED69A06D2AD7E40300EB1FB4 /* WebpageController.swift */,
 				ED69A0442AD42CC900EB1FB4 /* SceneDelegate.swift */,
-				ED2CD7B12ACB13FE00186E85 /* ViewController.swift */,
+				ED2CD7AD2ACB13FE00186E85 /* AppDelegate.swift */,
 				ED2CD7B32ACB13FE00186E85 /* Main.storyboard */,
+				ED351AC42AE66E9E0082D4D2 /* Launch Screen.storyboard */,
 				ED2CD7B62ACB13FF00186E85 /* Assets.xcassets */,
 				ED2CD7B82ACB13FF00186E85 /* LaunchScreen.storyboard */,
 				ED2CD7BB2ACB13FF00186E85 /* Info.plist */,
@@ -123,6 +143,10 @@
 			isa = PBXGroup;
 			children = (
 				EDB032342ADD53C5002BB52C /* miniSportAppTests.swift */,
+				ED351ACD2AE9665F0082D4D2 /* DataManagerTests.swift */,
+				ED351AC82AE6BB3C0082D4D2 /* DataLoaderTest.swift */,
+				ED351AC62AE6B0590082D4D2 /* WebpageControllerTests.swift */,
+				ED351AD82AEBF40D0082D4D2 /* News.json */,
 			);
 			path = miniSportAppTests;
 			sourceTree = "<group>";
@@ -242,6 +266,7 @@
 			files = (
 				ED2CD7BA2ACB13FF00186E85 /* LaunchScreen.storyboard in Resources */,
 				ED2CD7B72ACB13FF00186E85 /* Assets.xcassets in Resources */,
+				ED351AC52AE66E9E0082D4D2 /* Launch Screen.storyboard in Resources */,
 				ED2CD7B52ACB13FE00186E85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED351AD92AEBF40D0082D4D2 /* News.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,9 +294,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED69A0452AD42CC900EB1FB4 /* SceneDelegate.swift in Sources */,
+				ED351AC32AE129860082D4D2 /* DataManager.swift in Sources */,
 				ED2CD7CC2ACD7E7500186E85 /* DataLoader.swift in Sources */,
 				ED2CD7CA2ACD751E00186E85 /* NewsData.swift in Sources */,
+				ED351AD22AEA5BD20082D4D2 /* TopicController.swift in Sources */,
 				ED2CD7B22ACB13FE00186E85 /* ViewController.swift in Sources */,
+				ED351AD02AEA57C20082D4D2 /* SignInController.swift in Sources */,
 				ED2CD7AE2ACB13FE00186E85 /* AppDelegate.swift in Sources */,
 				ED69A06E2AD7E40300EB1FB4 /* WebpageController.swift in Sources */,
 			);
@@ -281,6 +310,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDB032352ADD53C5002BB52C /* miniSportAppTests.swift in Sources */,
+				ED351AC92AE6BB3C0082D4D2 /* DataLoaderTest.swift in Sources */,
+				ED351ACE2AE9665F0082D4D2 /* DataManagerTests.swift in Sources */,
+				ED351AC72AE6B0590082D4D2 /* WebpageControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +490,7 @@
 				INFOPLIST_FILE = miniSportApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BBCSport;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -486,7 +518,7 @@
 				INFOPLIST_FILE = miniSportApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BBCSport;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

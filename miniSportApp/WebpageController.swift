@@ -6,7 +6,7 @@
 import UIKit
 import WebKit
 
-class WebpageController: UIViewController, WKNavigationDelegate {
+class WebpageController: UIViewController, WKNavigationDelegate, NSSecureCoding {
     var webView: WKWebView!
     var url: URL
 
@@ -42,6 +42,9 @@ class WebpageController: UIViewController, WKNavigationDelegate {
     }
     override func encode(with aCoder: NSCoder) {
         aCoder.encode(url.absoluteString, forKey: "url")
+    }
+    static var supportsSecureCoding: Bool {
+        return true
     }
     
   
