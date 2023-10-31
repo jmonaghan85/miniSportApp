@@ -22,24 +22,8 @@ class ViewController: UIViewController {
             }
         }
         
-//
-//        URLSession.shared.dataTask(with: url) { data, _, error in
-//            if let error = error {
-//                print("Error fetching data: \(error.localizedDescription)")
-//                return
-//            }
-//            
-//            if let data = data {
-//                do {
-//                    self.data = try JSONDecoder().decode(Top.self, from: data)
-//                    DispatchQueue.main.async {
-//                        self.tableView.reloadData()
-//                    }
-//                } catch {
-//                    print("Error decoding JSON: \(error.localizedDescription)")
-//                }
-//            }
-//        }.resume()
+
+
         
         
         
